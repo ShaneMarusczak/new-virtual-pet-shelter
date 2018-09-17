@@ -43,7 +43,7 @@ public class VirtualPetShelter {
 
 	}
 
-	void giveDrinkToSinglePet(String name) {
+	public void giveDrinkToSinglePet(String name) {
 		shelter.get(name).giveDrink();
 
 	}
