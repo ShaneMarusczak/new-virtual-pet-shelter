@@ -77,19 +77,19 @@ public class VirtualPet {
 	}
 
 	public void increaseBoredom() {
-		boredom += ((rand.nextInt(3) + 2) * DNA);
+		boredom += ((rand.nextInt(5) + 2) * DNA);
 	}
 
 	public void increaseHunger() {
-		hunger += ((rand.nextInt(3) + 2) * DNA);
+		hunger += ((rand.nextInt(5) + 2) * DNA);
 	}
 
 	public void increaseThirst() {
-		thirst += ((rand.nextInt(3) + 2) * DNA);
+		thirst += ((rand.nextInt(5) + 2) * DNA);
 	}
 
 	public void decraseHappiness() {
-		happiness -= ((rand.nextInt(4) + 2) * DNA);
+		happiness -= ((rand.nextInt(5) + 2) * DNA);
 	}
 
 	public void playWith() {
