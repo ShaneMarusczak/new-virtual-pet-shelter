@@ -11,7 +11,7 @@ public class VirtualPet {
 	private String name;
 	private String description;
 	private int cageCleanliness;
-	private int DNA = rand.nextInt(2) + 1;
+	private int DNA = rand.nextInt(3) + 1;
 
 	VirtualPet(String name, String description) {
 		this.name = name;
@@ -31,11 +31,11 @@ public class VirtualPet {
 	public String toString() {
 		return name + "      " + hunger + "          " + thirst + "          " + boredom + "           " + happiness;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -45,7 +45,7 @@ public class VirtualPet {
 	}
 
 	public void cleanCage() {
-		cageCleanliness -= (1 * DNA);
+		cageCleanliness -= 1;
 	}
 
 	public void makeCageDirty() {
@@ -57,7 +57,9 @@ public class VirtualPet {
 	}
 
 	public void giveFood() {
-		hunger -= 1;
+		hunger -= 15;
+		thirst += 2;
+		happiness += 3;
 	}
 
 	public int getThirst() {
@@ -65,7 +67,9 @@ public class VirtualPet {
 	}
 
 	public void giveDrink() {
-		thirst -= 1;
+		thirst -= 15;
+		hunger += 2;
+		happiness += 3;
 	}
 
 	public int getHappiness() {
@@ -73,24 +77,24 @@ public class VirtualPet {
 	}
 
 	public void increaseBoredom() {
-		boredom += (1 * DNA);
+		boredom += ((rand.nextInt(3) + 2) * DNA);
 	}
 
 	public void increaseHunger() {
-		hunger += (1 * DNA);
+		hunger += ((rand.nextInt(3) + 2) * DNA);
 	}
 
 	public void increaseThirst() {
-		thirst += (1 * DNA);
+		thirst += ((rand.nextInt(3) + 2) * DNA);
 	}
 
 	public void decraseHappiness() {
-		happiness -= (1 * DNA);
+		happiness -= ((rand.nextInt(4) + 2) * DNA);
 	}
 
 	public void playWith() {
-		happiness += (1 * DNA);
-		boredom -= (1 * DNA);
+		happiness += (4 * DNA);
+		boredom -= (3 * DNA);
 
 	}
 

@@ -1,15 +1,17 @@
 package virtualpetshelter;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class VirtualPetShelterApp {
 
 	public static void main(String[] args) {
+		Random rand = new Random();
 		Scanner input = new Scanner(System.in);
 		VirtualPetShelter shelter = new VirtualPetShelter();
-		VirtualPet bob = new VirtualPet("Bob", " would love to spend all day napping.");
-		VirtualPet fido = new VirtualPet("Fido", " can bark allllll day long.");
-		VirtualPet spot = new VirtualPet("Spot", " is a very friendly dog.");
+		VirtualPet bob = new VirtualPet("Bob", " would love to spend all day napping.", 50, 50, 10, 50);
+		VirtualPet fido = new VirtualPet("Fido", " can bark allllll day long.", 75, 75, 15, 25);
+		VirtualPet spot = new VirtualPet("Spot", " is a very friendly dog.", 25, 30, 20, 30);
 		shelter.addPet("Bob", bob);
 		shelter.addPet("Fido", fido);
 		shelter.addPet("Spot", spot);
@@ -25,7 +27,7 @@ public class VirtualPetShelterApp {
 		while (playingGame) {
 			do {
 				System.out.println("Here are all your pets:\n");
-				System.out.println("Name    |Hunger    |Thirst    |Boredom    |Happiness");
+				System.out.println("|Name   | Hunger   | Thirst   | Boredom   |Happiness");
 				System.out.println("|-------|----------|----------|-----------|---------|");
 				for (VirtualPet pet : shelter.getAllPets().values()) {
 					System.out.println(pet);
@@ -85,7 +87,8 @@ public class VirtualPetShelterApp {
 				String name = input.nextLine();
 				System.out.println("\nDescribe the pet briefly.");
 				String description = input.nextLine();
-				VirtualPet newPet = new VirtualPet(name, description);
+				VirtualPet newPet = new VirtualPet(name, description, rand.nextInt(40) + 1, rand.nextInt(40) + 1,
+						rand.nextInt(40) + 1, rand.nextInt(40) + 1);
 				shelter.addPet(name, newPet);
 			}
 			if (menuInput == 8) {
