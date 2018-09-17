@@ -15,7 +15,7 @@ public class VirtualPetTest {
 		int endingHunger = testPet.getHunger();
 		assertTrue(endingHunger < startingHunger);
 	}
-	
+
 	@Test
 	public void shouldBeAbleToLowerThirstWhenGivenDrink() {
 		int startingThirst = testPet.getThirst();
@@ -23,7 +23,7 @@ public class VirtualPetTest {
 		int endingThirst = testPet.getThirst();
 		assertTrue(endingThirst < startingThirst);
 	}
-	
+
 	@Test
 	public void shouldGetHappierWhenPlayedWithAndDecreaseBoredom() {
 		int startingHappiness = testPet.getHappiness();
